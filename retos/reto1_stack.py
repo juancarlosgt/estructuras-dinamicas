@@ -16,8 +16,24 @@ Tips:
 from estructuras.stack import Stack
 
 PARES = {')': '(', '}': '{', ']': '['}
+OPEN = {'(','[','{'}
 
 def validate_expression(expression: str) -> bool:
     # TODO: Implementar con Stack siguiendo las reglas de arriba.
     # Debe ser O(n) en tiempo; O(n) espacio peor caso.
-    raise NotImplementedError
+
+    pila = Stack()
+    lista = list(expression)
+    print(lista)
+    for item in lista:
+
+        print(item)
+        if item in OPEN:
+            pila.push(item)
+            
+        else :
+            if PARES.get(item) == pila.pop():
+                
+                return True
+            else :
+                return False  

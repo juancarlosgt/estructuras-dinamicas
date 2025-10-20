@@ -12,26 +12,64 @@ Sugerencia:
 
 class Node:
     # TODO: implementar nodo simple
-    pass
+    def __init__(self,value,next):
+        self.value = value
+        self.next = next
 
 class Stack:
     # TODO: implementar pila enlazada
+    def __init__(self):
+        self.top = Node(None,None)
+        self.size = 0
     def push(self, value):
         """Inserta en el tope. O(1)"""
-        raise NotImplementedError
+        if self.size == 0 :
+            self.top.value = value
+        else :
+            newTop = Node(value,self.top) 
+            self.top = newTop   
+        self.size +=1    
 
     def pop(self):
         """Extrae y retorna el tope. O(1). Debe lanzar IndexError si está vacía."""
-        raise NotImplementedError
+        if self.size == 0:
+            raise IndexError
+        value = self.top.value
+        self.top = self.top.next
+        self.size -=1
+        return value
 
     def peek(self):
         """Retorna el tope sin extraer. O(1). IndexError si vacía."""
-        raise NotImplementedError
+        return self.top.value
 
     def is_empty(self):
         """True si no hay elementos. O(1)"""
-        raise NotImplementedError
+        empty = self.size == 0
+        return empty
 
-    def size(self):
+    def get_size(self):
         """Cantidad de elementos. O(1)"""
-        raise NotImplementedError
+        return self.size
+    
+    def print(self):
+        nodo = self.top
+        while nodo != None:
+            print(nodo)
+            nodo = nodo.next
+
+
+#pila = Stack()
+#pila.push("HOLA")
+#pila.push("XD")
+#pila.push("SAJSA")
+#pila.print()
+#print(pila.get_size())
+#print(pila.is_empty())
+#print(pila.peek())
+#pila.pop()
+#pila.pop()
+#pila.print()
+#print(pila.get_size())
+#print(pila.is_empty())
+#print(pila.peek())
