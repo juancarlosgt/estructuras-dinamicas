@@ -24,16 +24,13 @@ def validate_expression(expression: str) -> bool:
 
     pila = Stack()
     lista = list(expression)
-    print(lista)
     for item in lista:
-
-        print(item)
+        
         if item in OPEN:
             pila.push(item)
             
         else :
-            if PARES.get(item) == pila.pop():
-                
-                return True
-            else :
+            if PARES.get(item) != pila.pop():
                 return False  
+                
+    return pila.is_empty()                 

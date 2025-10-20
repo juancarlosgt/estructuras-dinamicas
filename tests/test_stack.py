@@ -25,7 +25,7 @@ class TestChallenge1Stack(unittest.TestCase):
     # - solo aperturas -> False
         expression = "[[[((({{"
         resultado = validate_expression(expression)
-        self.assertFale(resultado)
+        self.assertFalse(resultado)
 
 if __name__ == "__main__":
     unittest.main()
