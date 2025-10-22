@@ -11,27 +11,65 @@ Sugerencia:
 """
 
 class DoubleNode:
-    # TODO: implementar nodo doble
-    pass
+    def __init__(self,value,prev,next):
+        self.value = value
+        self.prev = prev
+        self.next = next
 
 class Queue:
-    # TODO: implementar cola enlazada doble
+    def __init__(self):
+        self.head = DoubleNode(None,None,None)
+        self.tail = DoubleNode(None,self.head,None)
+        self.head.next = self.tail
+        self.size = 0
+
     def enqueue(self, value):
         """Inserta al final. O(1)"""
-        raise NotImplementedError
+        nodo = DoubleNode(value,self.tail.prev,self.tail)
+        self.tail.prev.next = nodo
+        self.tail.prev = nodo
+        self.size += 1
 
     def dequeue(self):
         """Extrae el primero. O(1). Debe lanzar IndexError si está vacía."""
-        raise NotImplementedError
+        if self.size == 0 :
+            raise IndexError
+        nodo = self.head.next
+        valor = nodo.value
+
+        self.head.next = nodo.next
+        nodo.next.prev = self.head
+        self.size -=1
+        return valor
 
     def peek(self):
         """Retorna el primero sin extraer. O(1). IndexError si vacía."""
-        raise NotImplementedError
+        if self.size == 0 :
+            raise IndexError
+        return self.head.next.value
+        
 
     def is_empty(self):
-        """True si la cola está vacía. O(1)"""
-        raise NotImplementedError
+        return self.size == 0
 
-    def size(self):
-        """Cantidad de elementos. O(1)"""
-        raise NotImplementedError
+    def get_size(self):
+        return self.size
+
+    def list(self):
+        nodo = self.head.next
+        list = []
+        while nodo is not self.tail:
+            list.append(nodo.value)
+            nodo = nodo.next
+        return list    
+        
+    def print(self):
+        nodo = self.head
+        while nodo is not None:
+            if nodo is self.head:
+                print("head")
+            elif nodo is self.tail:
+                print("tail")
+            else :
+                print(nodo.value)   
+            nodo = nodo.next          

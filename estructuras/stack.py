@@ -11,13 +11,11 @@ Sugerencia:
 """
 
 class Node:
-    # TODO: implementar nodo simple
     def __init__(self,value,next):
         self.value = value
         self.next = next
 
 class Stack:
-    # TODO: implementar pila enlazada
     def __init__(self):
         self.top = Node(None,None)
         self.size = 0
@@ -37,6 +35,8 @@ class Stack:
         value = self.top.value
         self.top = self.top.next
         self.size -=1
+        if self.size == 0:
+            self.__init__()
         return value
 
     def peek(self):
@@ -57,19 +57,3 @@ class Stack:
         while nodo != None:
             print(nodo)
             nodo = nodo.next
-
-
-#pila = Stack()
-#pila.push("HOLA")
-#pila.push("XD")
-#pila.push("SAJSA")
-#pila.print()
-#print(pila.get_size())
-#print(pila.is_empty())
-#print(pila.peek())
-#pila.pop()
-#pila.pop()
-#pila.print()
-#print(pila.get_size())
-#print(pila.is_empty())
-#print(pila.peek())
