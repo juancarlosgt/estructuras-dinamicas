@@ -52,8 +52,4 @@ class Stack:
         """Cantidad de elementos. O(1)"""
         return self.size
     
-    def print(self):
-        nodo = self.top
-        while nodo != None:
-            print(nodo)
-            nodo = nodo.next
+    

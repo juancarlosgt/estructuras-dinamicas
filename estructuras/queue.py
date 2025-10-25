@@ -62,14 +62,4 @@ class Queue:
             list.append(nodo.value)
             nodo = nodo.next
         return list    
-        
-    def print(self):
-        nodo = self.head
-        while nodo is not None:
-            if nodo is self.head:
-                print("head")
-            elif nodo is self.tail:
-                print("tail")
-            else :
-                print(nodo.value)   
-            nodo = nodo.next          
+                

@@ -23,3 +23,39 @@ python -m unittest -v
 * Agrega más casos (bordes, errores esperados).
 * Documenta complejidades Big-O en los READMEs de cada carpeta.
 
+
+# Descripcion
+
+- **Stack** : Almacena elementos mediante patron *LIFO* ; operaciones -> push, pop, peek , etc
+- **Queue** : Almacena elementos mediante patron *FIFO* , se tienen nodos centinalas en head y tail ; operaciones -> enqueue, dequeue, etc
+- **Linked List** : Lista en la que cada nodo tiene referencias al siguiente y al anterior mediante `head` y `prev` respectivamente.
+
+## Retos
+
+- **Reto 1** : Validar el balance y orden de parentesis `()` , llaves `{}` y corchetes `[]` , utilizando el *Stack*
+- **Reto 2** : Cola de Atencion utilizando *Queue*
+- **Reto 3** : Gestor de tareas: usa LinkedList para el manejo de tareas (insertar, eliminar, buscar).
+
+## Complejidad Big O
+
+
+Stack :
+- push : `O(1)`
+- pop : `O(1)`
+- peek : `O(1)`
+
+Queue :
+- Enqueue : `O(1)`
+- Dequeue : `O(1)`
+- peek : `O(1)`
+
+LinkedList :
+- append : `O(1)`
+- preppend : `O(1)`
+- find : `O(n)`
+- remove : `O(n)`
+- list : `O(n)`
+---
+### Evidencia
+![Evidencia de Pruebas](https://ibb.co/JhmgFns)
+
