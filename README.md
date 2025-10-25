@@ -57,5 +57,5 @@ LinkedList :
 - list : `O(n)`
 ---
 ### Evidencia
-![Evidencia de Pruebas](https://ibb.co/JhmgFns)
+![Evidencia de Pruebas](retos/imagen.png)
 
